@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>图论相关笔试题 | 小毛驴的程序媛爬行之路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="拓扑排序昨天做了今日头条和京东的笔试题，最后一道都是跟图相关的，之前以为不会涉及这方面的算法题。今天借用leetcode上的 Course Schedule 这道题，学习一下图论相关的知识。 拓扑排序是对有向无圈图的顶点的一种排序。如果图有圈，那么拓扑排序是不可能的。另外，排序不必是唯一的，任何合理的排序都可以。简单的拓扑排序的算法：  找出任意一个没有入边的顶点； 显示该顶点，并将该顶点和其边一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图论相关笔试题">
+<meta property="og:url" content="http://yoursite.com/2018/09/10/图论相关笔试题/index.html">
+<meta property="og:site_name" content="小毛驴的程序媛爬行之路">
+<meta property="og:description" content="拓扑排序昨天做了今日头条和京东的笔试题，最后一道都是跟图相关的，之前以为不会涉及这方面的算法题。今天借用leetcode上的 Course Schedule 这道题，学习一下图论相关的知识。 拓扑排序是对有向无圈图的顶点的一种排序。如果图有圈，那么拓扑排序是不可能的。另外，排序不必是唯一的，任何合理的排序都可以。简单的拓扑排序的算法：  找出任意一个没有入边的顶点； 显示该顶点，并将该顶点和其边一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-10T10:16:35.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图论相关笔试题">
+<meta name="twitter:description" content="拓扑排序昨天做了今日头条和京东的笔试题，最后一道都是跟图相关的，之前以为不会涉及这方面的算法题。今天借用leetcode上的 Course Schedule 这道题，学习一下图论相关的知识。 拓扑排序是对有向无圈图的顶点的一种排序。如果图有圈，那么拓扑排序是不可能的。另外，排序不必是唯一的，任何合理的排序都可以。简单的拓扑排序的算法：  找出任意一个没有入边的顶点； 显示该顶点，并将该顶点和其边一">
+  
+    <link rel="alternate" href="/atom.xml" title="小毛驴的程序媛爬行之路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小毛驴的程序媛爬行之路</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-图论相关笔试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/10/图论相关笔试题/" class="article-date">
+  <time datetime="2018-09-10T09:06:45.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      图论相关笔试题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>昨天做了今日头条和京东的笔试题，最后一道都是跟图相关的，之前以为不会涉及这方面的算法题。<br>今天借用leetcode上的 <a href="https://leetcode-cn.com/problems/course-schedule/description/" target="_blank" rel="noopener">Course Schedule</a> 这道题，学习一下图论相关的知识。</p>
+<p>拓扑排序是对有向无圈图的顶点的一种排序。<br>如果图有圈，那么拓扑排序是不可能的。另外，排序不必是唯一的，任何合理的排序都可以。<br>简单的拓扑排序的算法：</p>
+<ol>
+<li>找出任意一个没有入边的顶点；</li>
+<li>显示该顶点，并将该顶点和其边一起从图中删除。</li>
+<li>对图中剩余部分重复1，2步骤</li>
+</ol>
+<p>假设图被读入一个邻接表中，且Indegree 数组被初始化。计算图中所有顶点的入度。<br>伪代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void topsort(Graph G)</span><br><span class="line">&#123;</span><br><span class="line">	int counter;</span><br><span class="line">	Vertex V,W;</span><br><span class="line">	for (counter=0;counter&lt;numvertex;counter++)</span><br><span class="line">	&#123;</span><br><span class="line">		V = FindNewVertexOfIndegreeZero();</span><br><span class="line">		/*如果尚未分配拓扑编码的顶点中没有入度为0的，则意味该图有圈*/</span><br><span class="line">		if( V== NotAVertex)</span><br><span class="line">		&#123;</span><br><span class="line">			Error(&quot;Graph has a cycle.&quot;);</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		TopNum[V] = counter;</span><br><span class="line">		for each W adjacent to V</span><br><span class="line">			Indegree[W]--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在搜索入度为0的顶点时，可以将所有未分配拓扑编号的入度为0的顶点放在栈或队列中。<br>算法可以改进为：</p>
+<ol>
+<li>对每个顶点计算入度</li>
+<li>将所有入度为0的顶点放入一个初始为空的队列中</li>
+<li>如果队列不为空时，删除一个顶点v, 并将与v邻接的所有顶点入度-1</li>
+<li>有顶点的入度降为0， 就把顶点放入队列中</li>
+<li>拓扑顺序就是顶点出队顺序</li>
+</ol>
+<p>Course Schedule这道题只需判断图是否有环，则只需要判断最后是否还有入度不为0的节点<br> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">canFinish</span><span class="params">(<span class="keyword">int</span> numCourse, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;&amp; prerequisites)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; graph(numCourse,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (<span class="number">0</span>));</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; indegree(numCourse,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> u:prerequisites)</span><br><span class="line">		&#123;</span><br><span class="line">			graph[u[<span class="number">1</span>]].push_back(u[<span class="number">0</span>]);</span><br><span class="line">			++indegree[u[<span class="number">0</span>]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numCourse;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)</span><br><span class="line">				q.push(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(!q.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> tmp=q.front();</span><br><span class="line">			q.pop();</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> v:graph[tmp])</span><br><span class="line">			&#123;</span><br><span class="line">				indegree[v]--;</span><br><span class="line">				<span class="keyword">if</span>(indegree[v]==<span class="number">0</span>)</span><br><span class="line">					q.push(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numCourse;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(indegree[i]!=<span class="number">0</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还有DFS的解法，有空再写。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/10/图论相关笔试题/" data-id="cjlw4n6ja0003q2is0m09m09k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/08/今日笔试编程题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">今日笔试编程题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/10/图论相关笔试题/">图论相关笔试题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/08/今日笔试编程题/">今日笔试编程题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/08/my-first-blog/">my first blog</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Crystal<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
